@@ -1,7 +1,7 @@
 #!/bin/bash
 # linux rice install script
 
-sudo pacman -S neofetch
+yes | sudo pacman -S neofetch
 echo "Moving neofetch config to ~/.config/neofetch"
 cp -R ./neofetch ~/.config
 if [ $? -eq 0 ]; then   
