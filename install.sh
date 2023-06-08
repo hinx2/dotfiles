@@ -1,7 +1,7 @@
 #!/bin/bash
 # linux rice install script
 
-yes | sudo pacman -S neofetch
+yes | sudo pacman -S neofetch btop speedtest-cli 
 echo "Moving neofetch config to ~/.config/neofetch"
 cp -R ./neofetch ~/.config
 if [ $? -eq 0 ]; then   
