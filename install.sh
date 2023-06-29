@@ -14,17 +14,17 @@ do
   if [[ -f $distro ]]; then
     echo Package manager: ${osInfo[$distro]}
     if [[ ${osInfo[$distro]} = pacman ]]; then
-      sudo ${osInfo[$distro]} -Syu
-      #yes | sudo pacman -S neofetch btop speedtest-cli neovim glances 
+      yes | sudo ${osInfo[$distro]} -Syu
+      yes | sudo pacman -S neofetch btop speedtest-cli neovim glances 
     fi
   fi
 done
 
 
-# echo "Moving neofetch config to ~/.config/neofetch"
-# cp -R ./neofetch ~/.config
-# if [ $? -eq 0 ]; then   
-#   echo "neofetch config moved succesfuly"
-# else
-#   echo "Neofetch config move unsuccesfully"
-# fi
+ echo "Moving neofetch config to ~/.config/neofetch"
+ cp -R ./neofetch ~/.config
+ if [ $? -eq 0 ]; then   
+   echo "neofetch config moved succesfuly"
+ else
+   echo "Neofetch config move unsuccesfully"
+ fi
