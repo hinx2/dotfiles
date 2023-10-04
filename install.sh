@@ -15,8 +15,14 @@ do
     echo Package manager: ${osInfo[$distro]}
     if [[ ${osInfo[$distro]} = pacman ]]; then
       yes | sudo ${osInfo[$distro]} -Syu
-      yes | sudo pacman -S neofetch btop speedtest-cli neovim glances bluez bluez-utils
+      yes | sudo pacman -S neofetch btop speedtest-cli neovim glances bluez bluez-utils 
       yes | sudo systemctl enable bluetooth.service
+    fi
+    
+    if [[ ${osInfo[$distro]} = apt-get ]]; then
+      yes | sudo apt update
+      yes | sudo apt upgrade
+      yes | sudo apt install neofetch btop neovim speedtest-cli
     fi
   fi
 done
